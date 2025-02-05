@@ -1,23 +1,20 @@
 import 'package:flutter/material.dart';
 
+
+import 'package:travel/screens/categories_screen.dart';
+
 void main() {
-  runApp(const travel());
+  runApp(const travelApp());
 }
 
-class travel extends StatelessWidget {
-  const travel({super.key});
+class travelApp extends StatelessWidget {
+  const travelApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blue,
-          title: Center(child: const Text('Travel' , style: TextStyle(fontSize: 32 , color: Colors.black),)),
-        ),
-      ),
-
+      home: CategoriesScreen(),
     );
   }
 }
