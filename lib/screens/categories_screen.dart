@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel/app_data.dart';
+import 'package:travel/constant/constant.dart';
 import 'package:travel/widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -7,7 +8,8 @@ class CategoriesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('دليل سياحي'),
+        backgroundColor: Colors.blue,
+        title: Center(child: Text('دليل سياحي'  , style: kPrimaryStyle,)),
       ),
       body: GridView(
         padding: const EdgeInsets.all(25),
