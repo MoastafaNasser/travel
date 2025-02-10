@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel/screens/categories_tripes_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({
@@ -12,7 +13,7 @@ class CategoryItem extends StatelessWidget {
   final String imageUrl;
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).pushNamed("/categories_tripes", arguments: {
+    Navigator.of(ctx).pushNamed(CategoriesTripesScreen.screenroute , arguments: {
       "id": id,
       "title": title,
     });

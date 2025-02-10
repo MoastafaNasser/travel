@@ -31,9 +31,11 @@ class travelApp extends StatelessWidget {
               ),
             ),
       ),
-      home: CategoriesScreen(),
+      // home: CategoriesScreen(),
+      initialRoute: "/" ,
       routes:{
-        "/categories_tripes":(ctx)=>CategoriesTripesScreen(),
+        "/":(ctx)=> CategoriesScreen(),
+        CategoriesTripesScreen.screenroute:(ctx)=>CategoriesTripesScreen(),
       } ,
     );
   }

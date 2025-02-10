@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel/constant/constant.dart';
 
 class CategoriesTripesScreen extends StatelessWidget {
+  static const screenroute = "/categories_tripes";
   // final String categoryid;
   // final String categoryTitle;
 
@@ -21,12 +22,14 @@ class CategoriesTripesScreen extends StatelessWidget {
         backgroundColor: Colors.blue,
         title: Center(
             child: Text(
-          categoryTitle != null ? categoryTitle : "قائمه الرحلات",
+          categoryTitle as String,
           style: kPrimaryStyle,
         )),
       ),
       body: Center(
-        child: Text("قائمه برحلات هذا التصنيف"),
+        child: Text(
+          "قائمه برحلات هذا التصنيف",
+        ),
       ),
     );
   }
