@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:travel/screens/categories_screen.dart';
+import 'package:travel/screens/categories_tripes_screen.dart';
 
 void main() {
   runApp(const travelApp());
@@ -31,6 +32,9 @@ class travelApp extends StatelessWidget {
             ),
       ),
       home: CategoriesScreen(),
+      routes:{
+        "/categories_tripes":(ctx)=>CategoriesTripesScreen(),
+      } ,
     );
   }
 }

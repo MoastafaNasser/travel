@@ -1,26 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:travel/screens/categories_tripes_screen.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({
     super.key,
     required this.imageUrl,
     required this.title,
+    required this.id,
   });
+  final String id;
   final String title;
   final String imageUrl;
+
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      MaterialPageRoute(
-        builder: (context) => CategoriesTripesScreen(),
-      ),
-    );
+    Navigator.of(ctx).pushNamed("/categories_tripes", arguments: {
+      "id": id,
+      "title": title,
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () => selectCategory,
+    return InkWell(
+      onTap: () => selectCategory(context),
+      splashColor: Theme.of(context).primaryColor,
       child: Stack(
         children: [
           ClipRRect(

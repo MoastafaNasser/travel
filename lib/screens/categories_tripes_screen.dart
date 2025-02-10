@@ -1,13 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:travel/constant/constant.dart';
 
 class CategoriesTripesScreen extends StatelessWidget {
-  const CategoriesTripesScreen({super.key});
+  // final String categoryid;
+  // final String categoryTitle;
+
+  // const CategoriesTripesScreen(String id, String title,
+  //     {super.key,  required this.categoryid,required  this.categoryTitle});
 
   @override
   Widget build(BuildContext context) {
+    final routeArugment =
+        ModalRoute.of(context)!.settings.arguments as Map<String, String>;
+
+    final categoryTitle = routeArugment["title"];
+    final categoryid = routeArugment["id"];
+
     return Scaffold(
       appBar: AppBar(
-        title: const Text("صفحة الرحلات"),
+        backgroundColor: Colors.blue,
+        title: Center(
+            child: Text(
+          categoryTitle != null ? categoryTitle : "قائمه الرحلات",
+          style: kPrimaryStyle,
+        )),
+      ),
+      body: Center(
+        child: Text("قائمه برحلات هذا التصنيف"),
       ),
     );
   }
