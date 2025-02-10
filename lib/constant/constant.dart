@@ -1,3 +1,7 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
-const kPrimaryStyle = TextStyle(fontSize: 24 , color: Colors.white);
+const kPrimaryStyle = TextStyle(
+  fontSize: 24,
+  color: Colors.white,
+  fontFamily: "ElMessiri",
+);
