@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel/app_data.dart';
 import 'package:travel/constant/constant.dart';
+import 'package:travel/widgets/trip_Item.dart';
 
 class CategoriesTripesScreen extends StatelessWidget {
   static const screenroute = "/categories_tripes";
@@ -16,7 +18,9 @@ class CategoriesTripesScreen extends StatelessWidget {
 
     final categoryTitle = routeArugment["title"];
     final categoryid = routeArugment["id"];
-
+    final filteredTrips = Trips_data.where((trip) {
+      return trip.categories.contains(categoryid);
+    }).toList();
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
@@ -26,10 +30,17 @@ class CategoriesTripesScreen extends StatelessWidget {
           style: kPrimaryStyle,
         )),
       ),
-      body: Center(
-        child: Text(
-          "قائمه برحلات هذا التصنيف",
-        ),
+      body: ListView.builder(
+        itemCount: filteredTrips.length,
+        itemBuilder: (BuildContext context, int index) {
+          return TripItem(
+            title: filteredTrips[index].title,
+            imageUrl: filteredTrips[index].imageUrl,
+            duration: filteredTrips[index].duration,
+            tripType: filteredTrips[index].tripType,
+            season: filteredTrips[index].season,
+          );
+        },
       ),
     );
   }
