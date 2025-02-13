@@ -16,6 +16,36 @@ class TripItem extends StatelessWidget {
   final TripType tripType;
   final Season season;
 
+  String get SeasonText {
+    switch (season) {
+      case Season.Winter:
+        return "شتاء";
+      case Season.spring:
+        return "ربيع";
+      case Season.summer:
+        return "صيف";
+      case Season.autumn:
+        return "خريف";
+      default:
+        return "غير معروف";
+    }
+  }
+
+  String get TripTypetext {
+    switch (tripType) {
+      case TripType.Exploration:
+        return "استكشاف";
+      case TripType.Recovery:
+        return "نقاهه";
+      case TripType.activities:
+        return "انشطه";
+      case TripType.therepy:
+        return "معالجه";
+      default:
+        return "غير معرووف";
+    }
+  }
+
   void selectTrip() {}
 
   @override
@@ -44,8 +74,74 @@ class TripItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
+                Container(
+                  height: 250,
+                  width: double.infinity,
+                  alignment: Alignment.bottomRight,
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.bottomCenter,
+                      end: Alignment.topCenter,
+                      colors: [
+                        Colors.black.withOpacity(0),
+                        Colors.black.withOpacity(0.8),
+                      ],
+                      stops: [0.6, 1],
+                    ),
+                  ),
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: Text(
+                    title,
+                    style: Theme.of(context).textTheme.headlineLarge,
+                    overflow: TextOverflow.fade,
+                  ),
+                ),
               ],
             ),
+            Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.today,
+                        color: Theme.of(context).hintColor,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text("$duration  ايام"),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.sunny,
+                        color: Theme.of(context).hintColor,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(SeasonText),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.today,
+                        color: Theme.of(context).hintColor,
+                      ),
+                      SizedBox(
+                        width: 6,
+                      ),
+                      Text(TripTypetext),
+                    ],
+                  ),
+                ],
+              ),
+            )
           ],
         ),
       ),
