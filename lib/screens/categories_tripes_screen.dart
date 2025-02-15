@@ -34,6 +34,7 @@ class CategoriesTripesScreen extends StatelessWidget {
         itemCount: filteredTrips.length,
         itemBuilder: (BuildContext context, int index) {
           return TripItem(
+            id: filteredTrips[index].id,
             title: filteredTrips[index].title,
             imageUrl: filteredTrips[index].imageUrl,
             duration: filteredTrips[index].duration,
