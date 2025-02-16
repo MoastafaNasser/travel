@@ -5,12 +5,6 @@ import 'package:travel/widgets/trip_Item.dart';
 
 class CategoriesTripesScreen extends StatelessWidget {
   static const screenroute = "/categories_tripes";
-  // final String categoryid;
-  // final String categoryTitle;
-
-  // const CategoriesTripesScreen(String id, String title,
-  //     {super.key,  required this.categoryid,required  this.categoryTitle});
-
   @override
   Widget build(BuildContext context) {
     final routeArugment =
