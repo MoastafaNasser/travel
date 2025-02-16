@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel/screens/categories_screen.dart';
+import 'package:travel/screens/favorite_Screeen.dart';
 
 class TabScreen extends StatelessWidget {
   const TabScreen({super.key});
@@ -27,6 +28,7 @@ class TabScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             CategoriesScreen(),
+            FavoriteScreeen(),
           ],
         ),
       ),
