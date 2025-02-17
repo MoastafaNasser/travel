@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import 'package:travel/screens/categories_screen.dart';
 import 'package:travel/screens/categories_tripes_screen.dart';
+import 'package:travel/screens/filters_Screen.dart';
 import 'package:travel/screens/tab_Screen.dart';
 import 'package:travel/screens/trips_ditiles_screen.dart';
 
@@ -39,6 +38,7 @@ class travelApp extends StatelessWidget {
         "/": (ctx) => TabScreen(),
         CategoriesTripesScreen.screenroute: (ctx) => CategoriesTripesScreen(),
         TripsDitilesScreen.screenroute: (context) => TripsDitilesScreen(),
+        FiltersScreen.Screenroute: (context) => FiltersScreen(),
       },
     );
   }

@@ -24,10 +24,22 @@ class AppDrawer extends StatelessWidget {
           SizedBox(
             height: 20,
           ),
-          buildlistTile(),
+          buildlistTile(
+            "الرحلات",
+            Icons.card_travel,
+            () {
+              Navigator.of(context).pushNamed("/");
+            },
+          ),
+          buildlistTile(
+            "الفلتره ",
+            Icons.filter_list,
+            () {
+              Navigator.of(context).pushNamed("/");
+            },
+          ),
         ],
       ),
     );
   }
-
 }

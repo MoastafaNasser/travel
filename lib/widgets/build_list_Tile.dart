@@ -1,14 +1,18 @@
-
-  import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:travel/constant/constant.dart';
 
-ListTile buildlistTile() {
-    return ListTile(
-          leading: Icon(
-            Icons.card_travel,
-            size: 20,
-            color: (Colors.blue),
-          ),
-          title: Text("الرحلات " , style: kPrimaryStyle,),
-        );
-  }
+Widget buildlistTile(
+    String title, IconData icon, GestureTapCallback? onTapLink) {
+  return ListTile(
+    leading: Icon(
+      icon,
+      size: 20,
+      color: (Colors.blue),
+    ),
+    title: Text(
+      title,
+      style: kPrimaryStyle,
+    ),
+    onTap: onTapLink,
+  );
+}
