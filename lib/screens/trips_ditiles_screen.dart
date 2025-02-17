@@ -46,7 +46,7 @@ class TripsDitilesScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blue,
+        backgroundColor: Theme.of(context).primaryColor,
         title: Center(
           child: Text(
             SelectedTrip.title,
